@@ -128,3 +128,20 @@ formatter.step({
 formatter.match({
   "location": "com.vytrack.step_definitions.NavigationMenuStepDefs.the_user_navigates(java.lang.String,java.lang.String)"
 });
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the title contains \"Contacts - Customers\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.vytrack.step_definitions.LoginStepDefs.the_title_contains(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+});
