@@ -8,7 +8,7 @@ Feature: Account types
   Scenario: Sales manager user
     Given the user logged in as "sales manager"
     When the user navigates "Customers" "Accounts"
-    Then the title contains "Accounts - CustomersS"
+    Then the title contains "Accounts - Customers"
   @wip
   Scenario: Store manager user
     Given the user logged in as "store manager"
