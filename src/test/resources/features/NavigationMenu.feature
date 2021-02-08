@@ -2,7 +2,7 @@
 
 Feature: Navigation Menu
 
-
+@smoke
   Scenario: Navigating Fleet -- Vehicles
     Given the user is on the login page
     And the user enter sales manager information
@@ -16,7 +16,7 @@ Feature: Navigation Menu
     When the user navigates to Marketing, Campaigns
     Then the title should be Campaigns
 
-
+@smoke
   Scenario: Navigating Activities -- Calendar Events
     Given the user is on the login page
     And the user enter sales manager information

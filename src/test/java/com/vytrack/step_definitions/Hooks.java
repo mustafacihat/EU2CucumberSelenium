@@ -1,5 +1,7 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.utilities.ConfigurationReader;
+import com.vytrack.utilities.DBUtils;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -7,11 +9,21 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
 
     @Before
     public void setUp() {
         System.out.println("\tthis is coming from BEFORE");
+
+        String browser = ConfigurationReader.get("browser");
+        if(!browser.contains("mobile")){
+            Driver.get().manage().window().maximize();
+        }
+        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
     }
 
     @After
@@ -21,18 +33,19 @@ public class Hooks {
             scenario.attach(screenShot, "image/png", "screenshot");
         }
 
+        System.out.println("\tafter when");
         Driver.closeDriver();
     }
 
     @Before("@db")
     public void setupDb() {
         System.out.println("\tconnecting to Database...");
-
+        DBUtils.createConnection();
     }
 
     @After("@db")
     public void closeDb() {
         System.out.println("\tdisconnecting from Database...");
-
+        DBUtils.destroy();
     }
 }
