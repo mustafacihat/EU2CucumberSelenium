@@ -2,7 +2,7 @@
 
 Feature: Navigation Menu
 
-
+  @just
   Scenario: Navigating Fleet -- Vehicles
     Given the user is on the login page
     And the user enter sales manager information

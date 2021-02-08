@@ -1,4 +1,3 @@
-.idea
-EU2CucumberSelenium.iml
-target
-test-results
+/.idea/
+/EU2CucumberSelenium.iml
+/target
