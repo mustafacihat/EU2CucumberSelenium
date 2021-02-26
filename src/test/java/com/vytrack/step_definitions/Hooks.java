@@ -15,7 +15,6 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        System.out.println("\tthis is coming from BEFORE");
 
         String browser = ConfigurationReader.get("browser");
         if(!browser.contains("mobile")){
@@ -33,7 +32,6 @@ public class Hooks {
             scenario.attach(screenShot, "image/png", "screenshot");
         }
 
-        System.out.println("\tafter when");
         Driver.closeDriver();
     }
 

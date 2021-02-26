@@ -9,8 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
 
 import java.util.List;
 import java.util.Map;
@@ -20,7 +19,7 @@ public class ContactsStepDefs {
 
     @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
-        String url = ConfigurationReader.get("url");
+        String url = ConfigurationReader.get("qa_fleetgru");
         Driver.get().get(url);
 
         LoginPage loginPage = new LoginPage();

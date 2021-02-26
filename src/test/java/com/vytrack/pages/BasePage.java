@@ -34,9 +34,23 @@ public abstract class  BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+    @FindBy(css = "div.column-manager.dropdown")
+    public WebElement gridSettingsButton;
+
+    @FindBy(xpath = "//input[@data-role='column-manager-search']")
+    public WebElement gridSettingsInput;
+
+    @FindBy(xpath = "(//tbody)[1]/tr[1]/td[1]")
+    public WebElement gridFirstInfo;
+
+
+
+
+
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
+
 
 
     /**
